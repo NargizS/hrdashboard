@@ -3,13 +3,8 @@
 {% block title %}{{ user.username }}{% endblock %}
 
 {% block content %}
-    {% if user.is_authenticated %}
-        <h1>{{ user.username }} welcome to your profile page</h1>
-        <h2>{{ user.first_name }}</h2>
-        <h2>{{ user.last_name }}</h2>
-        <p>{{userprofile.gpa}}</p>
-       
-        
-    {% endif %}
-
+    {% for profile in profile_list %}
+	  {{ profile.user.username }}
+	  {{ profile.bio }}
+	{% endfor %}
 {% endblock %}
